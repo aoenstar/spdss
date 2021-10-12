@@ -67,7 +67,7 @@
         </style>
     </head>
     <body class="antialiased">
-        
+        <a href="{{ url('/home') }}" class="text-sm text-gray-700 underline" style="color:black;">Home</a>
 			<h1>Frequently Asked Questions</h1>
             <div class="qcontain">
                 <div class="questions">
