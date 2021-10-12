@@ -42,7 +42,7 @@
             @endif
 
             <div>
-                @guest 
+                @auth 
                 <table>
                     <tr>
                         <th>Company</th>
