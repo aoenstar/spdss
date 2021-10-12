@@ -15,7 +15,7 @@
                     @endif
 					<a href="{{ url('/catalog')}}">List items in catalog</a>
                     {{ __('You are logged in!') }}
-
+					<div><a href="{{ url('/FAQ')}}">FAQ</a></div>
                 </div>
             </div>
         </div>
