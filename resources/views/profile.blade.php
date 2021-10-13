@@ -15,7 +15,6 @@
                     @endif
 					<div>Name: {{ Auth::user()->name }}</div>
 					<div>Email: {{ Auth::user()->email }}</div>
-					<div>User ID: {{ Auth::user()->id}}</div>
                 </div>
             </div>
         </div>
