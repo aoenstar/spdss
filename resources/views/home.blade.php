@@ -17,7 +17,8 @@
 					{{ __('You are logged in!') }}
 					<li><a href="{{ url('/catalog')}}">List items in catalog</a></li>
                     
-					<li><div><a href="{{ url('/FAQ')}}">FAQ</a></div>
+					<li><div><a href="{{ url('/FAQ')}}">FAQ</a></div></li>
+                    <li><div><a href="{{ url('/Guide')}}">Guide</a></div></li>
 					</ul>
                 </div>
             </div>

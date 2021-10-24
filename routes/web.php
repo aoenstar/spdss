@@ -25,8 +25,16 @@ Route::get('/FAQ', function () {
     return view('FAQ');
 })->name('FAQ');
 
+Route::get('/Guide', function () {
+    return view('Guide');
+})->name('Guide');
+
+Route::get('/filter/{company}', [App\Http\Controllers\CatalogController::class, 'filter']);
+
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 
 Route::resource('catalog', CatalogController::class);
