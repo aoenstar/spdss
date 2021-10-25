@@ -45,8 +45,7 @@ class CatalogController extends Controller
 						'price' => $request->price,
             'company' => $request->company,
 		]);
-        //$catalog = Catalog::($id);
-		//return view('catalog/edit')->with('catalog', $catalog;
+    return redirect(url('catalog'));
     }
 
     /**
@@ -85,7 +84,8 @@ class CatalogController extends Controller
      */
     public function edit($id)
     {
-        //
+      $catalog = Catalog::findOrFail($id);
+      return view('catalog/edit')->with('catalog', $catalog);
     }
 
     /**
@@ -95,9 +95,16 @@ class CatalogController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CatalogCreateRequest $request, $id)
     {
-        //
+      $item = Catalog::find($id);
+      $item->vehicleMake = $request->vehicleMake;
+      $item->vehicleModel = $request->vehicleModel;
+      $item->vehicleType = $request->vehicleType;
+      $item->year = $request->year;
+      $item->price = $request->price; 
+      $item->save();
+      return redirect(url('catalog'));
     }
 
     /**
