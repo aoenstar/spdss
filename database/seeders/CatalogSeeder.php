@@ -41,12 +41,6 @@ class CatalogSeeder extends Seeder
                     'price' => '16000.00'
                 ],
                 [
-                    'company' => 'blob',
-                    'name'=> 'Magnum Energy inverter',
-                    'description' => '4kW, 120/240V, 60Hz, Sine Wave/ Off-grid: 120/240V',
-                    'price' => '1000.00'
-                ],
-                [
                     'company' => 'Solar Watt Systems Inc',
                     'name'=> 'Photovoltage system',
                     'description' => '5kW, No insurance',
