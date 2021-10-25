@@ -13,13 +13,9 @@
                             {{ session('status') }}
                         </div>
                     @endif
-					<ul style="display: flex; flex-direction: column;">
-					{{ __('You are logged in!') }}
-					<li><a href="{{ url('/catalog')}}">List items in catalog</a></li>
-                    
-					<li><div><a href="{{ url('/FAQ')}}">FAQ</a></div></li>
-                    <li><div><a href="{{ url('/Guide')}}">Guide</a></div></li>
-					</ul>
+                    <ul style="display: flex; flex-direction: column;">
+                    {{ __('You are logged in!') }}
+                    </ul>
                 </div>
             </div>
         </div>
