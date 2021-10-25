@@ -13,6 +13,5 @@ class Catalog extends Model
                             'name',
                             'description',
                             'price'
-                            
     ];
 }
