@@ -97,14 +97,12 @@ class CatalogController extends Controller
      */
     public function update(CatalogCreateRequest $request, $id)
     {
-      $item = Catalog::find($id);
-      $item->vehicleMake = $request->vehicleMake;
-      $item->vehicleModel = $request->vehicleModel;
-      $item->vehicleType = $request->vehicleType;
-      $item->year = $request->year;
-      $item->price = $request->price; 
-      $item->save();
-      return redirect(url('catalog'));
+        $catalog = Catalog::find($id);
+        $catalog->name = $request->name;
+        $catalog->description = $request->description;
+        $catalog->price = $request->price;
+        $catalog->save();
+        return redirect(url('catalog'));
     }
 
     /**
