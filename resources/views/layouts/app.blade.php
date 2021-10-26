@@ -30,6 +30,9 @@
             <a href="{{ url('/catalog')}}">Catalog</a>
             <a href="{{ url('/Guide')}}">Guide</a>
             <a href="{{ url('/FAQ')}}">FAQ</a>
+            <a href="{{ route('catalog.create') }}">Add catalog item</a>
+            <a class="nav-link" href="{{ route('catalog.show', 1) }}">View catalog item</a>
+            <a class="nav-link" href="{{ route('catalog.edit', 1) }}">Edit catalog item</a>
         </div>
         <nav style="height: 0;">
             <div class="logo">

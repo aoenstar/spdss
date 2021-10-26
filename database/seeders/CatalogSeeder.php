@@ -45,6 +45,18 @@ class CatalogSeeder extends Seeder
                     'name'=> 'Photovoltage system',
                     'description' => '5kW, No insurance',
                     'price' => '15000.00'
+                ],
+                [
+                    'company' => 'Williams Solar',
+                    'name' => 'Photovoltage System',
+                    'decription' => '3kW, No insurance',
+                    'price' => '15000.00'
+                ],
+                [
+                    'company' => 'Williams Solar',
+                    'name' => 'Photovoltage System',
+                    'decription' => '37.5kW, No insurance',
+                    'price' => '4000000.00'
                 ]
             ]);
     }

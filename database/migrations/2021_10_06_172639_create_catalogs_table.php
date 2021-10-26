@@ -18,7 +18,7 @@ class CreateCatalogsTable extends Migration
             $table ->string('company');
             $table->string('name');
             $table->string('description');
-            $table->decimal('price', $precision = 8, $scale = 2);
+            $table->decimal('price', $precision = 10, $scale = 2);
             $table->timestamps();
         });
     }
