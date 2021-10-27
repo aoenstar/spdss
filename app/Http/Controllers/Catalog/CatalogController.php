@@ -25,8 +25,8 @@ class CatalogController extends Controller
      */
     public function index()
     {
-        $items = catalog::all();
-		return view('catalog/index')->with('items', $items);
+      $items = catalog::all();
+      return view('catalog/index')->with('items', $items);
     }
 
     /**
@@ -37,7 +37,7 @@ class CatalogController extends Controller
     public function create()
     {
         $catalog = new Catalog;
-		return view('catalog/create')->with('catalog', $catalog);
+		    return view('catalog/create')->with('catalog', $catalog);
     }
 
     /**
@@ -48,12 +48,12 @@ class CatalogController extends Controller
      */
     public function store(Request $request)
     {
-		$catalog = Catalog::create([
-						'name' => $request->name,
-						'description' => $request->description,
-						'price' => $request->price,
-            'company' => $request->company,
-		]);
+      $catalog = Catalog::create([
+              'name' => $request->name,
+              'description' => $request->description,
+              'price' => $request->price,
+              'company' => $request->company,
+      ]);
     return redirect(url('catalog'));
     }
 
@@ -67,7 +67,6 @@ class CatalogController extends Controller
     {
       $item = Catalog::findOrFail($id);
       return view('catalog/show')->with('item', $item);
-      
     }
 
     public function filter($price)
@@ -110,6 +109,7 @@ class CatalogController extends Controller
         $catalog->name = $request->name;
         $catalog->description = $request->description;
         $catalog->price = $request->price;
+        $catalog->company = $request->company;
         $catalog->save();
         return redirect(url('catalog'));
     }
@@ -123,7 +123,7 @@ class CatalogController extends Controller
     public function destroy($id)
     {
         $item = Catalog::findOrFail($id);
-		$item->delete();
-		return redirect() ->back();
+        $item->delete();
+        return redirect(url('catalog'));
     }
 }

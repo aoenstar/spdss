@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-@extends('layouts.app')
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
@@ -95,6 +94,7 @@
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 sm:items-center sm:pt-0" style="--bg-opacity: 0;">
             <div style="background-color: white; padding-left: 20px; padding-right: 20px; padding-bottom: 10px;">
                 <h1 style="text-align: center;">Catalog</h1>
+                <a href="{{ route('catalog.create') }}">Add Item</a>
                 @auth
                 <table id="catalogTable">
                     <thead>
@@ -103,17 +103,22 @@
                             <th>Name</th>
                             <th>Description</th>
                             <th>Price</th>
+                            <th></th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
+                        <?php $id = 1; ?>
                         @foreach ($items as $item)
                         <tr>
                             <td>{{$item->company}}</td>
                             <td>{{$item->name}}</td>
                             <td>{{$item->description}}</td>
                             <td>${{$item->price}}</td>
+                            <td><a href="/catalog/<?php echo $id; ?>/edit">Edit</a></td>
+                            <td><a href="/catalog/<?php echo $id; ?>">Details</a></td>
                         </tr>
-
+                        <?php $id++; ?>
                         @endforeach
                     </tbody>
                 </table>
