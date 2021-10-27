@@ -105,17 +105,15 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php $id = 1; ?>
                         @foreach ($items as $item)
                         <tr>
                             <td>{{$item->company}}</td>
                             <td>{{$item->name}}</td>
                             <td>{{$item->description}}</td>
                             <td>${{$item->price}}</td>
-                            <td><a href="/catalog/<?php echo $id; ?>/edit">Edit</a></td>
-                            <td><a href="/catalog/<?php echo $id; ?>">Details</a></td>
+                            <td><a href="/catalog/{{$item->id}}/edit">Edit</a></td>
+                            <td><a href="/catalog/{{$item->id}}">Details</a></td>
                         </tr>
-                        <?php $id++; ?>
                         @endforeach
                     </tbody>
                 </table>
