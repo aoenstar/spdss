@@ -9,6 +9,7 @@ use App\Http\Requests\catalog\CatalogCreateRequest;
 
 class CatalogController extends Controller
 {
+  
     /**
      * Display a listing of the resource.
      *

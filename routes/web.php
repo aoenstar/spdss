@@ -25,9 +25,9 @@ Route::get('/FAQ', function () {
     return view('FAQ');
 })->name('FAQ');
 
-Route::get('/guide', function () {
-    return view('guide');
-})->name('guide');
+Route::get('/Guide', function () {
+    return view('Guide');
+})->name('Guide');
 
 Route::get('/aboutus', function () {
     return view('aboutus');
