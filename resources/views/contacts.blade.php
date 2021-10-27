@@ -3,11 +3,6 @@
 @section('content')
     <!-- Styles -->
     <style>
-        body
-        {
-            background: lightgrey;
-        }
-
         .container
         {
             display: flex;
@@ -71,9 +66,21 @@
             transition: all 1s ease;
         }
 
-
+        .con
+        {
+            font-size: 50px;
+            text-align: center;
+            color: black;
+            -webkit-text-fill-color: white;
+            -webkit-text-stroke-width: 2px;
+            -webkit-text-stroke-color: black;
+        }
     </style>
-    <h1 style="text-align: center">Contacts</h1>
+
+    <br>
+    <br>
+    <br>
+    <h1 class="con">Contacts</h1>
     <section class="container">
         <div class="card">
             <div class = "card-image"><img src="https://www.innogenonline.com/wp-content/uploads/2018/04/Innogen-logo-new.png"></div>

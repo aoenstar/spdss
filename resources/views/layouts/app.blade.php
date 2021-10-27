@@ -28,11 +28,13 @@
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
             <h2>Dashboard</h2>
             <a href="{{ url('/catalog')}}">Catalog</a>
-            <a href="{{ url('/Guide')}}">Guide</a>
+            <a href="{{ route('catalog.create') }}">Add Catalog Item</a>
+            <a class="nav-link" href="{{ route('catalog.show', 1) }}">View Catalog Item</a>
+            <a class="nav-link" href="{{ route('catalog.edit', 1) }}">Edit Catalog Item</a>
+            <a href="{{ url('/guide')}}">Guide</a>
+            <a href="{{ url('/contacts')}}">Contacts</a>
+            <a href="{{ url('/aboutus')}}">AboutUs</a>
             <a href="{{ url('/FAQ')}}">FAQ</a>
-            <a href="{{ route('catalog.create') }}">Add catalog item</a>
-            <a class="nav-link" href="{{ route('catalog.show', 1) }}">View catalog item</a>
-            <a class="nav-link" href="{{ route('catalog.edit', 1) }}">Edit catalog item</a>
         </div>
         <nav style="height: 0;">
             <div class="logo">
@@ -40,6 +42,7 @@
                 <a href="{{ url('/home') }}" class="navbar toggler text-sm text-gray-700 underline">
                     <h1>Home</h1>
                 </a>
+            <div style="position:absolute;top:20px;left:45%; font-size:x-large;"><a href="">SPDSS</a></div>
             </div>
             <ul class="mainMenu">
                 <!-- Authentication Links -->

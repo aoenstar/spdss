@@ -9,9 +9,9 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-8">
-                    <div class="card">
-                        <h2 class = "card-header text-center">Viewing Catalog Item: {{$item->id}}</h2>
-                        <div class="card-body justify-content-center">
+                    <div class="usrForms">
+                        <h2 class = "usrForms-header text-center">Viewing Catalog Item: {{$item->id}}</h2>
+                        <div class="usrForms-body justify-content-center">
                             <p>Item Name: {{$item->name}}</p>
                             <p>Price: ${{$item->price}} </p> 
                             <p>Item: Description: {{$item->description}}</p>
