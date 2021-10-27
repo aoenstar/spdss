@@ -28,9 +28,6 @@
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
             <h2>Dashboard</h2>
             <a href="{{ url('/catalog')}}">Catalog</a>
-            <a href="{{ route('catalog.create') }}">Add Catalog Item</a>
-            <a class="nav-link" href="{{ route('catalog.show', 1) }}">View Catalog Item</a>
-            <a class="nav-link" href="{{ route('catalog.edit', 1) }}">Edit Catalog Item</a>
             <a href="{{ url('/guide')}}">Guide</a>
             <a href="{{ url('/contacts')}}">Contacts</a>
             <a href="{{ url('/aboutus')}}">AboutUs</a>

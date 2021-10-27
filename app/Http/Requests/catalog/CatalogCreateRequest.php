@@ -24,10 +24,10 @@ class CatalogCreateRequest extends FormRequest
     public function rules()
     {
         return [
-				'name' => 'required|alphanum',
+				'name' => 'required|alpha_num',
 				'description' => 'required|regex:~^[A-Za-z0-9 -():.]+$~',
 				'price' => 'required|numeric',
-                'company' => 'required|alphanumeric',
+                'company' => 'required|alpha_num',
         ];
     }
 }

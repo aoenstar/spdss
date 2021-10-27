@@ -26,7 +26,6 @@
                                 <p class="text-center">
                                     {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
                                 </p>
-
                             {!! Form::close() !!}
                         </div>
                     </div>
