@@ -6,14 +6,14 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
         <div  style="padding-bottom:1rem;"></div>
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+            <div class="usrForms">
+                <div class="usrForms-header">{{ __('Login') }}</div>
 
-                <div class="card-body">
+                <div class="usrForms-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
-                        <p class="card-subheader">Welcome back! Log in to your account to view catalog:</p>
+                        <p class="usrForms-subheader">Welcome back! Log in to your account to view catalog:</p>
                         <div class="form-group row">
 
                             <div class="col-md-6">
@@ -54,12 +54,12 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn-primary">
                                     {{ __('Login') }}
                                 </button>
 
                                 @if (Route::has('password.request'))
-                                    <a class="pass btn btn-link" href="{{ route('password.request') }}">
+                                    <a class="pass btn-link" href="{{ route('password.request') }}">
                                         {{ __('Forgot Your Password?') }}
                                     </a>
                                 @endif

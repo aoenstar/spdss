@@ -25,9 +25,17 @@ Route::get('/FAQ', function () {
     return view('FAQ');
 })->name('FAQ');
 
-Route::get('/Guide', function () {
-    return view('Guide');
-})->name('Guide');
+Route::get('/guide', function () {
+    return view('guide');
+})->name('guide');
+
+Route::get('/aboutus', function () {
+    return view('aboutus');
+})->name('aboutus');
+
+Route::get('/contacts', function () {
+    return view('contacts');
+})->name('contacts');
 
 Route::get('/filter/{company}', [App\Http\Controllers\CatalogController::class, 'filter']);
 

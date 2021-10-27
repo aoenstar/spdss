@@ -2,10 +2,10 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">Example Component</div>
+                <div class="usrForms">
+                    <div class="usrForms-header">Example Component</div>
 
-                    <div class="card-body">
+                    <div class="usrForms-body">
                         I'm an example component.
                     </div>
                 </div>

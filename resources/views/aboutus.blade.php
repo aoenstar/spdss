@@ -3,11 +3,6 @@
 @section('content')
 <!-- Styles -->
 <style>
-        body
-        {
-
-        }
-
         .container
         {
             display: flex;
@@ -63,20 +58,28 @@
         .background1
         {
             background-image: url('https://solarworksca.com/wp-content/uploads/2018/01/banner-finance-incentives.jpg');
-            height: 200px;
             background-size: cover;
+            background-position: center;
+            height: 100px;
             font-size: 20px;
-            text-align: justify;
         }
 
         .background1 h1
         {
-            padding-top: 70px;
-            color: white;
+            padding-top: 30px;
+            text-align: center;
+            color: black;
+            -webkit-text-fill-color: white;
+            -webkit-text-stroke-width: 2px;
+            -webkit-text-stroke-color: black;
         }
     </style>
+
+    <br>
+    <br>
+    <br>
     <div class="background1">
-        <h1 style="text-align: center">About Us</h1>
+        <h1>About Us</h1>
     </div>    
     <section class="container">
         <div class="card">
