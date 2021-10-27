@@ -12,12 +12,12 @@ class CatalogController extends Controller
   
     public function __construct()
     { 
-        $this->middleware('catalog.access:SPDSSAdministrator,RegisteredCustomer') 
-        ->only(['index', 'show']); 
-        
-        $this->middleware('catalog.access:SPDSSAdministrator,null') 
-        ->only(['create', 'store', 'edit', 'update', 'delete']); 
+      $this->middleware('catalog.access:SPDSSAdministrator,RegisteredCustomer')->only(['index', 'show']);
+
+      $this->middleware('catalog.access:SPDSSAdministrator,null')->only(['create', 'store', 'edit', 'update', 'delete']);
+  
     } 
+
     /**
      * Display a listing of the resource.
      *
@@ -106,10 +106,10 @@ class CatalogController extends Controller
     public function update(CatalogCreateRequest $request, $id)
     {
         $catalog = Catalog::find($id);
+        $catalog->company = $request->company;
         $catalog->name = $request->name;
         $catalog->description = $request->description;
         $catalog->price = $request->price;
-        $catalog->company = $request->company;
         $catalog->save();
         return redirect(url('catalog'));
     }
