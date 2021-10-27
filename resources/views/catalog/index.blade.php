@@ -41,7 +41,7 @@
             <a class="nav-link" href="{{ route('catalog.edit', 1) }}">Edit Catalog Item</a>
             <a href="{{ url('/Guide')}}">Guide</a>
             <a href="{{ url('/contacts')}}">Contacts</a>
-            <a href="{{ url('/aboutus')}}">AboutUs</a>
+            <a href="{{ url('/aboutus')}}">About us</a>
             <a href="{{ url('/FAQ')}}">FAQ</a>
         </div>
 

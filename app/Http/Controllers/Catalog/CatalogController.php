@@ -10,14 +10,14 @@ use App\Http\Requests\catalog\CatalogCreateRequest;
 class CatalogController extends Controller
 {
   
-    // public function __construct()
-    // { 
-    //     $this->middleware('catalog.access:SPDSSAdministrator,RegisteredCustomer') 
-    //     ->only(['index', 'show']); 
+    public function __construct()
+    { 
+        $this->middleware('catalog.access:SPDSSAdministrator,RegisteredCustomer') 
+        ->only(['index', 'show']); 
         
-    //     $this->middleware('catalog.access:SPDSSAdministrator,null') 
-    //     ->only(['create', 'store', 'edit', 'update', 'delete']); 
-    // } 
+        $this->middleware('catalog.access:SPDSSAdministrator,null') 
+        ->only(['create', 'store', 'edit', 'update', 'delete']); 
+    } 
     /**
      * Display a listing of the resource.
      *
@@ -69,20 +69,20 @@ class CatalogController extends Controller
       return view('catalog/show')->with('item', $item);
     }
 
-    public function filter($price)
-    {
-      if(Catalog::where('price', $price)->exists())
-      {
-        $category = Catalog::where('price', $price)->first();
-        $items = Catalog::where('price', $category->$price)->get();
-        return view('catalog/filter')->with('items', $items);
-      }
-      else
-      {
-        return redirect('/')->with('status', "Category does not exists");
-      }
-      //if(Catalog)
-    }
+    // public function filter($price)
+    // {
+    //   if(Catalog::where('price', $price)->exists())
+    //   {
+    //     $category = Catalog::where('price', $price)->first();
+    //     $items = Catalog::where('price', $category->$price)->get();
+    //     return view('catalog/filter')->with('items', $items);
+    //   }
+    //   else
+    //   {
+    //     return redirect('/')->with('status', "Category does not exists");
+    //   }
+    //   //if(Catalog)
+    // }
 
     /**
      * Show the form for editing the specified resource.
