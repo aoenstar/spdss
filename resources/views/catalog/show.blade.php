@@ -3,6 +3,10 @@
         <title>View</title>
     </head>
     @extends('layouts.app')
+    
+    @section ('page_title') 
+    View an Item in the Catalog 
+    @stop 
 
     @section('content')
 

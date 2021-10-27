@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
+
+@if(Session::has('errmessage')) 
+<p> Error: {{ Session::get('errmessage') }}</p> 
+@endif 
 <div class="container">
            
     <div class="row justify-content-center">

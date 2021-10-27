@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use DB;
+use Illuminate\Support\Facades\Hash;
 
 class CatalogSeeder extends Seeder
 {
@@ -59,5 +60,15 @@ class CatalogSeeder extends Seeder
                     'price' => '4000000.00'
                 ]
             ]);
+        
+        // Add a default administrator 
+        DB::table('users')->insert([ 
+            [ 
+               'name' => 'admin', 
+               'email' => 'admin@test.com', 
+               'password' => Hash::make('12345678'), 
+               'role' => 'SPDSSAdministrator' 
+            ] 
+        ]);
     }
 }
