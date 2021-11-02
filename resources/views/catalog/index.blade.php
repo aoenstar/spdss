@@ -12,6 +12,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <link rel="stylesheet" href="{{ asset('catalog.css')}}">
+    <link rel="stylesheet"  href="{{ asset('css/forms.css')}}">
     <link rel="stylesheet"  href="{{ asset('css/nav.css')}}">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
@@ -36,9 +37,6 @@
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
             <h2>Dashboard</h2>
             <a href="{{ url('/catalog')}}">Catalog</a>
-            <a href="{{ route('catalog.create') }}">Add Catalog Item</a>
-            <a class="nav-link" href="{{ route('catalog.show', 1) }}">View Catalog Item</a>
-            <a class="nav-link" href="{{ route('catalog.edit', 1) }}">Edit Catalog Item</a>
             <a href="{{ url('/Guide')}}">Guide</a>
             <a href="{{ url('/contacts')}}">Contacts</a>
             <a href="{{ url('/aboutus')}}">About us</a>
@@ -94,7 +92,11 @@
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 sm:items-center sm:pt-0" style="--bg-opacity: 0;">
             <div style="background-color: white; padding-left: 20px; padding-right: 20px; padding-bottom: 10px;">
                 <h1 style="text-align: center;">Catalog</h1>
-                <a href="{{ route('catalog.create') }}">Add Item</a>
+                @if (Auth::user()->role == 'SPDSSAdministrator')
+                    <a class="btn" style="padding: 5px 10px;" href="{{ route('catalog.create') }} ">Add Item</a>
+                @endif
+                <br>
+                <br>
                 @auth
                 <table id="catalogTable">
                     <thead>
@@ -103,22 +105,36 @@
                             <th>Name</th>
                             <th>Description</th>
                             <th>Price</th>
-                            <th></th>
+                            @if (Auth::user()->role == 'SPDSSAdministrator')
+                                <th></th>
+                            @endif
                             <th></th>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php $id = 1; ?>
                         @foreach ($items as $item)
                         <tr>
                             <td>{{$item->company}}</td>
                             <td>{{$item->name}}</td>
                             <td>{{$item->description}}</td>
                             <td>${{$item->price}}</td>
-                            <td><a href="/catalog/<?php echo $id; ?>/edit">Edit</a></td>
-                            <td><a href="/catalog/<?php echo $id; ?>">Details</a></td>
+                            @if (Auth::user()->role == 'SPDSSAdministrator')
+                                <td>
+                                {!! Form::open(['method' =>'get', 'action' =>
+                                ['App\Http\Controllers\Catalog\CatalogController@edit',
+                                $item->id]]) !!}
+                                {!! Form::submit('Edit', ['class' => 'admin-btn']) !!}
+                                {!! Form::close() !!}
+                                </td>
+                            @endif
+                            <td>
+                                {!! Form::open(['method' =>'get', 'action' =>
+                                ['App\Http\Controllers\Catalog\CatalogController@show',
+                                $item->id]]) !!}
+                                {!! Form::submit('Show', ['class' => 'admin-btn']) !!}
+                                {!! Form::close() !!}
+                            </td>
                         </tr>
-                        <?php $id++; ?>
                         @endforeach
                     </tbody>
                 </table>

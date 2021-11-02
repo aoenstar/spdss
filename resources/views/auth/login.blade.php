@@ -2,9 +2,7 @@
 
 @section('content')
 
-@if(Session::has('errmessage')) 
-<p> Error: {{ Session::get('errmessage') }}</p> 
-@endif 
+
 <div class="container">
            
     <div class="row justify-content-center">
@@ -14,6 +12,10 @@
                 <div class="usrForms-header">{{ __('Login') }}</div>
 
                 <div class="usrForms-body">
+                    @if(Session::has('errmessage')) 
+                        <p class="usrForms-subheader" style="color: red ">{{ Session::get('errmessage') }}</p> 
+                    @endif 
+                    
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 

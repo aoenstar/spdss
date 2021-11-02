@@ -82,6 +82,7 @@
         <h1>About Us</h1>
     </div>    
     <section class="container">
+	<!-- hello--> 
         <div class="card">
             <h2>Decison Support System</h2>
             <div class = "card-image image1"></div>

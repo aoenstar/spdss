@@ -8,8 +8,7 @@
             <div class="usrForms">
                 <h2 class = "usrForms-header text-center">Edit an Item in the Catalog</h2>
                 <div class="usrForms-body d-flex justify-content-center">
-                    {!! Form::open(['method' => 'PUT', 'url' => '/catalog/' .
-                                $catalog->id]) !!}
+                {!! Form::open(['method' => 'put', 'route' => ['catalog.update', $catalog->id]]) !!}
                         @include('catalog.partials/catalog', $catalog)
 
                         <p class="text-center">
