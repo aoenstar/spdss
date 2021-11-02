@@ -19,6 +19,7 @@ class CreateCatalogsTable extends Migration
             $table->string('name');
             $table->string('description');
             $table->decimal('price', $precision = 10, $scale = 2);
+            $table->boolean('residential');
             $table->timestamps();
         });
     }
@@ -30,6 +31,6 @@ class CreateCatalogsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('=catalogs');
+        Schema::dropIfExists('catalogs');
     }
 }

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Catalog\CatalogController;
+use App\Models\Catalog;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,7 +38,7 @@ Route::get('/contacts', function () {
     return view('contacts');
 })->name('contacts');
 
-Route::get('/filter/{company}', [App\Http\Controllers\CatalogController::class, 'filter']);
+Route::get('/filter/{company}', [App\Http\Controllers\Catalog\CatalogController::class, 'filter']);
 
 
 Auth::routes();
@@ -46,3 +47,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 Route::resource('catalog', CatalogController::class);
+
+Route::get('filteredcat/{type}', function ($type) {
+    $items = catalog::all()->where('residential',$type);
+      return view('catalog/index')->with('items', $items);
+});
