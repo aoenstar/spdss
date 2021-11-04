@@ -71,20 +71,6 @@ class CatalogController extends Controller
       return view('catalog/show')->with('item', $item);
     }
 
-    public function filter($price)
-    {
-      if(Catalog::where('price', $price)->exists())
-      {
-        $category = Catalog::where('price', $price)->first();
-        $items = Catalog::where('price', $category->$price)->get();
-        return view('catalog/filter')->with('items', $items);
-      }
-      else
-      {
-        return redirect('/')->with('status', "Category does not exists");
-      }
-      //if(Catalog)
-    }
 
     /**
      * Show the form for editing the specified resource.
