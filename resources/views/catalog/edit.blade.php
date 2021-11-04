@@ -1,3 +1,13 @@
+<?php 
+    $catalogList = $catalog->pluck('type')->toArray();
+    $options = $catalogList;
+    $options = [
+        '0' => $catalogList[$catalog->id]
+    ];
+
+    $selected = 0;
+?>
+
 @extends('layouts.app')
 
 @section('content')

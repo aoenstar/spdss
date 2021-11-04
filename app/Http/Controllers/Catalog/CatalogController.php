@@ -53,7 +53,7 @@ class CatalogController extends Controller
               'description' => $request->description,
               'price' => $request->price,
               'company' => $request->company,
-              'residential' =>$request->residential,
+              'sale_type' =>$request->sale_type,
               'type' =>$request->type,
       ]);
     return redirect(url('catalog'));
@@ -112,7 +112,7 @@ class CatalogController extends Controller
         $catalog->name = $request->name;
         $catalog->description = $request->description;
         $catalog->price = $request->price;
-        $catalog->residential = $request->residential;
+        $catalog->sale_type = $request->sale_type;
         $catalog->type = $request->type;
         $catalog->save();
         return redirect(url('catalog'));

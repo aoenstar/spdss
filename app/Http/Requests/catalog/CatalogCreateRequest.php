@@ -24,11 +24,11 @@ class CatalogCreateRequest extends FormRequest
     public function rules()
     {
         return [
-                'company' => 'required| regex:~^[a-zA-Z0-9 ]+$~',
-				'name' => 'required| regex:~^[a-zA-Z0-9 ]+$~',
+                'company' => 'required|regex:~^[a-zA-Z0-9 ]+$~',
+				'name' => 'required|regex:~^[a-zA-Z0-9 ]+$~',
 				'description' => 'required|regex:~^[A-Za-z0-9 -():.,]+$~',
 				'price' => 'required|numeric',
-                'residential' => 'required|boolean',
+                'sale_type' => 'required|regex:~^[a-zA-Z0-9 ]+$~',
                 'type' => 'required|in:Battery,System,Solar Panel,Inverter',
         ];
     }

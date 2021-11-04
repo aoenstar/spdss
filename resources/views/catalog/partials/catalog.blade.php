@@ -1,9 +1,9 @@
-        <div class="form-group row m-2">
+            <div class="form-group row m-2">
 
             <div class="col-md-6">
                 {!! Form::text('id', $catalog->id, ['placeholder' =>
                     'Catalog ID', 'disabled' => 'disabled'], ['class' => 'col-md-6 form-control'] ) !!}
-            {!! Form::label('id', 'Catalog ID:', array('class' => 'input-cat-id')) !!}
+                {!! Form::label('id', 'Catalog ID:', array('class' => 'input-cat-lbl')) !!}
             </div>
         </div>
 
@@ -12,7 +12,7 @@
             <div class="col-md-6">
                 {!! Form::text('name', $catalog->name, ['placeholder' =>
                     'Enter the name of the solar system (e.g. 2kw System)'], ['class' => 'form-control']) !!}
-            {!! Form::label('name', 'Name:') !!}
+                {!! Form::label('name', 'Name:') !!}
             </div>
             
             @error('name')
@@ -23,9 +23,9 @@
         <div class="form-group row m-2">
 
             <div class="col-md-6">
-            {!! Form::text('description', $catalog->description, ['placeholder' =>
-                'Enter the description of the solar system (e.g. )'] ) !!}
-            {!! Form::label('description', 'Description:') !!}
+                {!! Form::text('description', $catalog->description, ['placeholder' =>
+                    'Enter the description of the solar system (e.g. )'] ) !!}
+                {!! Form::label('description', 'Description:') !!}
             </div>
             
             @error('description')
@@ -36,9 +36,9 @@
         <div class="form-group row m-2">
 
             <div class="col-md-6">
-            {!! Form::text('company', $catalog->company, ['placeholder' =>
-                'Enter the company name (e.g. Innogen)'] ) !!}
-            {!! Form::label('company', 'Company:') !!}
+                {!! Form::text('company', $catalog->company, ['placeholder' =>
+                    'Enter the company name (e.g. Innogen)'] ) !!}
+                {!! Form::label('company', 'Company:') !!}
             </div>
             
             @error('company')
@@ -62,9 +62,9 @@
         <div class="form-group row m-2">
 
             <div class="col-md-6">
-            {!! Form::text('residential', $catalog->residential, ['placeholder' =>
-                'Enter solar system type (e.g. Residential)'] ) !!}
-            {!! Form::label('residential', 'Residential:') !!}
+            {!! Form::text('sale_type', $catalog->sale_type, ['placeholder' =>
+                'Enter solar system sale type (e.g. Residential)'] ) !!}
+            {!! Form::label('sale_type', 'Sale Type:') !!}
             </div>
             
             @error('residential')
@@ -74,12 +74,12 @@
 
         <div class="form-group row m-2">
 
-            <div class="col-md-6">
-            {!! Form::text('type', $catalog->type, ['placeholder' =>
-                'Enter item type (e.g. Battery)'] ) !!}
-            {!! Form::label('type', 'Type:') !!}
+            <div class="col-md-7">
+                <br>
+                {!! Form::select('type',  $options, $selected) !!}
+                {!! Form::label('type', 'Type:', array('class' => 'input-cat-lbl')) !!}
             </div>
-            
+
             @error('type')
                 <div style="color: red">{{ $message }}</div>
             @enderror

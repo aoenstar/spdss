@@ -13,7 +13,7 @@ class Catalog extends Model
                             'name',
                             'description',
                             'price',
-                            'residential',
+                            'sale_type',
                             'type',
 
     ];

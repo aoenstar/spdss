@@ -31,7 +31,7 @@
         .hide{
             display:none;
         }
-        .box a{
+        .box{
             border: 1px black solid;
         }
         .boxb a{
@@ -108,26 +108,33 @@
                 @endif
                 <br>
                 <br>
-                <div>Filter by</div>
-                <div class="types box"><a>Item Type</a></div>
-                <div class="types2 hide boxb">
-                   <div><a href ="{{url('catalog/filter/type/Battery')}}">Battery</a></div>
-                   <div><a href ="{{url('catalog/filter/type/Inverter')}}">Inverter</a></div>
-                   <div><a href ="{{url('catalog/filter/type/System')}}">System</a></div>
+                <div>
+                    <div>Filter by</div>
+                    <a class="types box" style="cursor: pointer">Item Type</a>
+                    <div class="types2 hide boxb">
+                        <a href ="{{url('catalog/filter/type/Battery')}}">Battery</a>
+                        <a href ="{{url('catalog/filter/type/Inverter')}}">Inverter</a>
+                        <a href ="{{url('catalog/filter/type/System')}}">System</a>
+                        <a href ="{{url('catalog/filter/type/Solar-Panel')}}">Solar Panel</a>
+                    </div>
+
+                    <a class="category box" style="cursor: pointer">Category</a>
+                    <div class="cat2 hide boxb">
+                        <a href ="{{url('catalog/filter/category/Residential')}}">Residential</a>
+                        <a href ="{{url('catalog/filter/category/Commercial')}}">Commercial</a>
+                    </div>
+
+                    <a class="company box" style="cursor: pointer">Company</a>
+                    <div class="com2 hide boxb">
+                        <a href ="{{url('catalog/filter/company/Williams Solar')}}">Williams Solar</a>
+                        <a href ="{{url('catalog/filter/company/Solar Energy Innovations Inc')}}">Solar Energy Innovations Inc</a>
+                        <a href ="{{url('catalog/filter/company/Innogen Solar Electricity')}}">Innogen Solar Electricity</a>
+                        <a href ="{{url('catalog/filter/company/Solar Watt Systems Inc')}}">Solar Watt Systems Inc</a>
+                    </div>
+
+                    <div class="boxb"><a style="cursor: pointer" href ="{{url('catalog')}}">Clear</a></div>
                 </div>
-                <div class="category box"><a>Category</a></div>
-                <div class="cat2 hide boxb">
-                   <div><a href ="{{url('catalog/filter/category/residential')}}">Residential</a></div>
-                   <div><a href ="{{url('catalog/filter/category/commericial')}}">Commercial</a></div>
-                </div>
-                <div class="company box"><a>Company</a></div>
-                <div class="com2 hide boxb">
-                   <div><a href ="{{url('catalog/filter/company/Williams Solar')}}">Williams Solar</a></div>
-                   <div><a href ="{{url('catalog/filter/company/Solar Energy Innovations Inc')}}">Solar Energy Innovations Inc</a></div>
-                   <div><a href ="{{url('catalog/filter/company/Innogen Solar Electricity')}}">Innogen Solar Electricity</a></div>
-                   <div><a href ="{{url('catalog/filter/company/Solar Watt Systems Inc')}}">Solar Watt Systems Inc</a></div>
-                </div>
-                <div class="boxb"><a href ="{{url('catalog')}}">Clear</a></div>
+
                 @auth
                 <table id="catalogTable">
                     <thead>

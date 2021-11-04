@@ -49,7 +49,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::resource('catalog', CatalogController::class);
 
 Route::get('catalog/filter/category/{type}', function ($type) {
-    $items = Catalog::all()->where('residential',$type);
+    $items = Catalog::all()->where('sale_type',$type);
       return view('catalog/index')->with('items', $items);
 });
 
