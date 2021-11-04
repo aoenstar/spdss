@@ -27,6 +27,17 @@
         });
 
     </script>
+    <style>
+        .hide{
+            display:none;
+        }
+        .box a{
+            border: 1px black solid;
+        }
+        .boxb a{
+            border: 1px blue solid;
+        }
+        </style>
 </head>
 
 <body class="antialiased">
@@ -93,10 +104,30 @@
             <div style="background-color: white; padding-left: 20px; padding-right: 20px; padding-bottom: 10px;">
                 <h1 style="text-align: center;">Catalog</h1>
                 @if (Auth::user()->role == 'SPDSSAdministrator')
-                    <a class="btn" style="padding: 5px 10px;" href="{{ route('catalog.create') }} ">Add Item</a>
+                    <a class="btn" style="padding: 5px 10px;" href="{{ route('catalog.create') }}" style="position:absolute; right:30%;">Add Item</a>
                 @endif
                 <br>
                 <br>
+                <div>Filter by</div>
+                <div class="types box"><a>Item Type</a></div>
+                <div class="types2 hide boxb">
+                   <div><a href ="{{url('catalog/filter/type/Battery')}}">Battery</a></div>
+                   <div><a href ="{{url('catalog/filter/type/Inverter')}}">Inverter</a></div>
+                   <div><a href ="{{url('catalog/filter/type/System')}}">System</a></div>
+                </div>
+                <div class="category box"><a>Category</a></div>
+                <div class="cat2 hide boxb">
+                   <div><a href ="{{url('catalog/filter/category/residential')}}">Residential</a></div>
+                   <div><a href ="{{url('catalog/filter/category/commericial')}}">Commercial</a></div>
+                </div>
+                <div class="company box"><a>Company</a></div>
+                <div class="com2 hide boxb">
+                   <div><a href ="{{url('catalog/filter/company/Williams Solar')}}">Williams Solar</a></div>
+                   <div><a href ="{{url('catalog/filter/company/Solar Energy Innovations Inc')}}">Solar Energy Innovations Inc</a></div>
+                   <div><a href ="{{url('catalog/filter/company/Innogen Solar Electricity')}}">Innogen Solar Electricity</a></div>
+                   <div><a href ="{{url('catalog/filter/company/Solar Watt Systems Inc')}}">Solar Watt Systems Inc</a></div>
+                </div>
+                <div class="boxb"><a href ="{{url('catalog')}}">Clear</a></div>
                 @auth
                 <table id="catalogTable">
                     <thead>
@@ -113,11 +144,13 @@
                     </thead>
                     <tbody>
                         @foreach ($items as $item)
-                        <tr>
+                       
+                        <tr class="entries">
                             <td>{{$item->company}}</td>
                             <td>{{$item->name}}</td>
                             <td>{{$item->description}}</td>
                             <td>${{$item->price}}</td>
+                            
                             @if (Auth::user()->role == 'SPDSSAdministrator')
                                 <td>
                                 {!! Form::open(['method' =>'get', 'action' =>
@@ -135,6 +168,7 @@
                                 {!! Form::close() !!}
                             </td>
                         </tr>
+                        <div class="end"></div>
                         @endforeach
                     </tbody>
                 </table>
@@ -149,6 +183,23 @@
     </div>
 
     <script src="{{ asset('js/sidebar.js')}}"></script>
+    <script>
+        let dropdown = document.querySelector(".types")
+        let typesList = document.querySelector(".types2")
+        dropdown.addEventListener('click', e =>{
+            typesList.classList.toggle("hide")
+        })
+        let category = document.querySelector(".category")
+        let catList = document.querySelector(".cat2")
+        category.addEventListener('click', e =>{
+            catList.classList.toggle("hide")
+        })
+        let company = document.querySelector(".company")
+        let comList = document.querySelector(".com2")
+        company.addEventListener('click', e =>{
+            comList.classList.toggle("hide")
+        })
+    </script>
 </body>
 
 </html>
