@@ -134,7 +134,6 @@
 
                     <div class="boxb"><a style="cursor: pointer" href ="{{url('catalog')}}">Clear</a></div>
                 </div>
-
                 @auth
                 <table id="catalogTable">
                     <thead>

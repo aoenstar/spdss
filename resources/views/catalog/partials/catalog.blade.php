@@ -67,7 +67,7 @@
             {!! Form::label('sale_type', 'Sale Type:') !!}
             </div>
             
-            @error('residential')
+            @error('sale_type')
                 <div style="color: red">{{ $message }}</div>
             @enderror
         </div>
