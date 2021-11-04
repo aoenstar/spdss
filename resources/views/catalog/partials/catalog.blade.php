@@ -63,7 +63,7 @@
 
             <div class="col-md-6">
             {!! Form::text('sale_type', $catalog->sale_type, ['placeholder' =>
-                'Enter solar system sale type (e.g. Residential)'] ) !!}
+                'Enter solar system sale type (e.g. Residential, Commercial)'] ) !!}
             {!! Form::label('sale_type', 'Sale Type:') !!}
             </div>
             
