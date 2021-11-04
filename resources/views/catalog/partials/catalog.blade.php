@@ -1,3 +1,14 @@
+<?php $options = [
+        '0' => '-- Select One --',
+        'Battery' => 'Battery',
+        'System' => 'System',
+        'Inverter' => 'Inverter',
+        'Solar Panel' => 'Solar Panel'
+    ];
+
+    $selected = 0;
+
+?>
             <div class="form-group row m-2">
 
             <div class="col-md-6">

@@ -1,16 +1,8 @@
-<?php 
-    $catalogList = $catalog->pluck('type')->toArray();
-    $options = $catalogList;
-    $options = [
-        $catalogList[$catalog->id] => $catalogList[$catalog->id]
-    ];
-
-    $selected = $catalogList[$catalog->id];
-?>
-
 @extends('layouts.app')
 
 @section('content')
+
+
 
 <div class="container">
     <div class="row justify-content-center">
