@@ -12,7 +12,7 @@
             <div class="usrForms">
                 <h2 class = "usrForms-header text-center">Add an Item to the Catalog</h2>
                 <div class="usrForms-body d-flex justify-content-center">
-                    {!! Form::open((['method' => 'post', 'route' => 'catalog.store']) !!}
+                    {!! Form::open(['method' => 'post', 'route' => 'catalog.store']) !!}
                         @include('catalog.partials/catalog', $catalog)
 
                         <p class="text-center">

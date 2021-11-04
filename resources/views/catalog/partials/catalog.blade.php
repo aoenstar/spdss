@@ -50,11 +50,37 @@
 
             <div class="col-md-6">
             {!! Form::text('price', $catalog->price, ['placeholder' =>
-                'Enter the price of the solar system (e.g. 100000)'] ) !!}
+                'Enter the price (e.g. 100000)'] ) !!}
             {!! Form::label('price', 'Price:') !!}
             </div>
             
             @error('price')
+                <div style="color: red">{{ $message }}</div>
+            @enderror
+        </div>
+
+        <div class="form-group row m-2">
+
+            <div class="col-md-6">
+            {!! Form::text('residential', $catalog->residential, ['placeholder' =>
+                'Enter solar system type (e.g. Residential)'] ) !!}
+            {!! Form::label('residential', 'Residential:') !!}
+            </div>
+            
+            @error('residential')
+                <div style="color: red">{{ $message }}</div>
+            @enderror
+        </div>
+
+        <div class="form-group row m-2">
+
+            <div class="col-md-6">
+            {!! Form::text('type', $catalog->type, ['placeholder' =>
+                'Enter item type (e.g. Battery)'] ) !!}
+            {!! Form::label('type', 'Type:') !!}
+            </div>
+            
+            @error('type')
                 <div style="color: red">{{ $message }}</div>
             @enderror
         </div>
