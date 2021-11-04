@@ -72,14 +72,24 @@
             @enderror
         </div>
 
+        <?php $options = [
+            '0' => '---Select One --',
+            '1' => 'Battery',
+            '2' => 'System',
+            '3' => 'Inverter',
+            '4' => 'Solar Panel',];
+
+            $selected = 0;
+
+            ?>
         <div class="form-group row m-2">
 
             <div class="col-md-6">
-            {!! Form::text('type', $catalog->type, ['placeholder' =>
-                'Enter item type (e.g. Battery)'] ) !!}
-            {!! Form::label('type', 'Type:') !!}
+            {!! Form::select('type', $options, $selected) !!}
+            {!! Form::label('type', 'Type:', array('class' => 'input-cat-lbl')) !!}
             </div>
             
+           
             @error('type')
                 <div style="color: red">{{ $message }}</div>
             @enderror

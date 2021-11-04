@@ -117,8 +117,8 @@
                 </div>
                 <div class="category box"><a>Category</a></div>
                 <div class="cat2 hide boxb">
-                   <div><a href ="{{url('catalog/filter/category/residential')}}">Residential</a></div>
-                   <div><a href ="{{url('catalog/filter/category/commericial')}}">Commercial</a></div>
+                   <div><a href ="{{url('catalog/filter/category/1')}}">Residential</a></div>
+                   <div><a href ="{{url('catalog/filter/category/0')}}">Commercial</a></div>
                 </div>
                 <div class="company box"><a>Company</a></div>
                 <div class="com2 hide boxb">

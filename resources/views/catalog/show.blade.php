@@ -18,7 +18,9 @@
                         <div class="usrForms-body justify-content-center">
                             <p>Price: ${{$item->price}} </p> 
                             <p>Item: Description: {{$item->description}}</p>
+                            <p>Item Type: {{$item->type}}</p>
                             <p>Item sold by: {{$item->company}}</p>
+                            
 
                             {!! Form::open(['method' => 'DELETE', 'url' => '/catalog/' .
                                 $item->id]) !!}

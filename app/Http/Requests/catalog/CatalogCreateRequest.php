@@ -29,7 +29,7 @@ class CatalogCreateRequest extends FormRequest
 				'description' => 'required|regex:~^[A-Za-z0-9 -():.,]+$~',
 				'price' => 'required|numeric',
                 'residential' => 'required|boolean',
-                'type' => 'required|in:Battery,System,Solar Panel,Inverter',
+                'type' => 'required|not_in:0',
         ];
     }
 }
