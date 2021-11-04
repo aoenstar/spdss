@@ -1,18 +1,19 @@
    
-   <head>
-        <title>Create</title>
-        <?php $options = [
-                '0' => '-- Select One --',
-                'Battery' => 'Battery',
-                'System' => 'System',
-                'Inverter' => 'Inverter',
-                'Solar Panel' => 'Solar Panel'
-            ];
+<?php $options = [
+        '0' => '-- Select One --',
+        'Battery' => 'Battery',
+        'System' => 'System',
+        'Inverter' => 'Inverter',
+        'Solar Panel' => 'Solar Panel'
+    ];
 
-            $selected = 0;
+    $selected = 0;
 
-            ?>
-    </head>
+?>
+
+<head>
+    <title>Create</title>
+</head>
 @extends('layouts.app')
 
 @section('content')
