@@ -1,4 +1,5 @@
-            <div class="form-group row m-2">
+   
+        <div class="form-group row m-2">
 
             <div class="col-md-6">
                 {!! Form::text('id', $catalog->id, ['placeholder' =>
