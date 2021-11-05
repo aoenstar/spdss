@@ -21,74 +21,44 @@ class CatalogSeeder extends Seeder
                     'company' => 'Solar Energy Innovations Inc',
                     'name'=> 'Magnum Energy inverter',
                     'description' => '4kW, 120/240V, 60Hz, Sine Wave/ Off-grid: 120/240V',
-                    'price' => '1000.00',
-                    'sale_type' => 'Residential',
-                    'type' => 'Inverter',
+                    'price' => '1000.00'
                 ],
                 [
                     'company' => 'Solar Energy Innovations Inc',
                     'name'=> 'SMA Sunny Island',
                     'description' => '5kW @ 230V AC, 50Hz Off-grid',
-                    'price' => '1000.00',
-                    'sale_type' => 'Commercial',
-                    'type' => 'System',
+                    'price' => '1000.00'
                 ],
                 [
                     'company' => 'Innogen Solar Electricity',
                     'name'=> '2kW System',
                     'description' => '2kW, Insurance: Free lifetime servicing with app monitoring, Use grid at night',
-                    'price' => '9700.00',
-                    'sale_type' => 'Residential',
-                    'type' => 'System',
+                    'price' => '9700.00'
                 ],
                 [
                     'company' => 'Innogen Solar Electricity',
                     'name'=> '4kW System',
                     'description' => '2kW, Insurance: Free lifetime servicing with app monitoring, Use grid at night',
-                    'price' => '16000.00',
-                    'sale_type' => 'Residential',
-                    'type' => 'System',
+                    'price' => '16000.00'
                 ],
                 [
                     'company' => 'Solar Watt Systems Inc',
                     'name'=> 'Photovoltage system',
                     'description' => '5kW, No insurance',
-                    'price' => '15000.00',
-                    'sale_type' => 'Residential',
-                    'type' => 'System',
+                    'price' => '15000.00'
                 ],
                 [
                     'company' => 'Williams Solar',
                     'name' => 'Photovoltage System',
                     'decription' => '3kW, No insurance',
-                    'price' => '15000.00',
-                    'sale_type' => 'Residential',
-                    'type' => 'System',
+                    'price' => '15000.00'
                 ],
                 [
                     'company' => 'Williams Solar',
                     'name' => 'Photovoltage System',
                     'decription' => '37.5kW, No insurance',
-                    'price' => '4000000.00',
-                    'sale_type' => 'Commercial',
-                    'type' => 'System',
-                ],
-                [
-                    'company' => 'Williams Solar',
-                    'name' => 'Photovoltage System',
-                    'decription' => '3kW, No insurance',
-                    'price' => '15000.00',
-                    'sale_type' => 'Residential',
-                    'type' => 'Battery',
-                ],
-                [
-                    'company' => 'Williams Solar',
-                    'name' => 'Photovoltage System',
-                    'decription' => '3kW, No insurance',
-                    'price' => '15000.00',
-                    'sale_type' => 'Commercial',
-                    'type' => 'Battery',
-                ],
+                    'price' => '4000000.00'
+                ]
             ]);
         
         // Add a default administrator 

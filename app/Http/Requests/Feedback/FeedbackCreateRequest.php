@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\catalog;
+namespace App\Http\Requests\Feedback;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CatalogCreateRequest extends FormRequest
+class FeedbackCreateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,10 +24,7 @@ class CatalogCreateRequest extends FormRequest
     public function rules()
     {
         return [
-                'company' => 'required| regex:~^[a-zA-Z0-9 ]+$~',
-				'name' => 'required| regex:~^[a-zA-Z0-9 ]+$~',
-				'description' => 'required|regex:~^[A-Za-z0-9 -():.,]+$~',
-				'price' => 'required|numeric',
+            'testimonial' => 'required|regex:~^[a-zA-Z0-9()-:.,]+$~',
         ];
     }
 }

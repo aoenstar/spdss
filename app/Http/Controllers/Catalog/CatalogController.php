@@ -46,15 +46,13 @@ class CatalogController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CatalogCreateRequest $request)
+    public function store(Request $request)
     {
       $catalog = Catalog::create([
               'name' => $request->name,
               'description' => $request->description,
               'price' => $request->price,
               'company' => $request->company,
-              'sale_type' =>$request->sale_type,
-              'type' =>$request->type,
       ]);
     return redirect(url('catalog'));
     }
@@ -71,6 +69,20 @@ class CatalogController extends Controller
       return view('catalog/show')->with('item', $item);
     }
 
+    public function filter($price)
+    {
+      if(Catalog::where('price', $price)->exists())
+      {
+        $category = Catalog::where('price', $price)->first();
+        $items = Catalog::where('price', $category->$price)->get();
+        return view('catalog/filter')->with('items', $items);
+      }
+      else
+      {
+        return redirect('/')->with('status', "Category does not exists");
+      }
+      //if(Catalog)
+    }
 
     /**
      * Show the form for editing the specified resource.
@@ -98,8 +110,6 @@ class CatalogController extends Controller
         $catalog->name = $request->name;
         $catalog->description = $request->description;
         $catalog->price = $request->price;
-        $catalog->sale_type = $request->sale_type;
-        $catalog->type = $request->type;
         $catalog->save();
         return redirect(url('catalog'));
     }
