@@ -32,7 +32,7 @@
 <body class="antialiased">
 
     <div id="app">
-        
+
         <div id="mySidebar" class="sidebar">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
             <h2>Dashboard</h2>
@@ -45,7 +45,7 @@
 
         <nav style="background-color: transparent">
             <div class="logo">
-                <button id="openHamBtn" class="openbtn" onclick="openNav()">☰</button>  
+                <button id="openHamBtn" class="openbtn" onclick="openNav()">☰</button>
                 <a href="{{ url('/home') }}" class="navbar toggler text-sm text-gray-700 underline">
                     <h1>Home</h1>
                 </a>
@@ -95,6 +95,8 @@
                 @if (Auth::user()->role == 'SPDSSAdministrator')
                     <a class="btn" style="padding: 5px 10px;" href="{{ route('catalog.create') }} ">Add Item</a>
                 @endif
+                <a class="btn" style="padding: 5px 10px;" href="{{ route('filteredcat', ['type' => 1]) }} ">View Residential</a>
+                <a class="btn" style="padding: 5px 10px;" href="{{ route('filteredcat', ['type' => 0]) }} ">View Commercial</a>
                 <br>
                 <br>
                 @auth

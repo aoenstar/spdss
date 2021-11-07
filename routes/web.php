@@ -48,7 +48,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::resource('catalog', CatalogController::class);
 
-Route::get('filteredcat/{type}', function ($type) {
+Route::get('filteredcat/{type}', ['as' => 'filteredcat', function ($type) {
     $items = catalog::all()->where('residential',$type);
       return view('catalog/index')->with('items', $items);
-});
+}]);
