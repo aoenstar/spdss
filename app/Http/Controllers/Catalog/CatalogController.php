@@ -9,14 +9,14 @@ use App\Http\Requests\catalog\CatalogCreateRequest;
 
 class CatalogController extends Controller
 {
-  
+
     public function __construct()
-    { 
+    {
       $this->middleware('catalog.access:SPDSSAdministrator,RegisteredCustomer')->only(['index', 'show']);
 
       $this->middleware('catalog.access:SPDSSAdministrator,null')->only(['create', 'store', 'edit', 'update', 'delete']);
-  
-    } 
+
+    }
 
     /**
      * Display a listing of the resource.
@@ -48,11 +48,14 @@ class CatalogController extends Controller
      */
     public function store(Request $request)
     {
+        $request['residential'] = $request->residential ? 1:0;
+
       $catalog = Catalog::create([
               'name' => $request->name,
               'description' => $request->description,
               'price' => $request->price,
               'company' => $request->company,
+              'residential' => $request->residential,
       ]);
     return redirect(url('catalog'));
     }
@@ -110,6 +113,8 @@ class CatalogController extends Controller
         $catalog->name = $request->name;
         $catalog->description = $request->description;
         $catalog->price = $request->price;
+        $request['residential'] = $request->residential ? 1:0;
+        $catalog->residential = $request->residential;
         $catalog->save();
         return redirect(url('catalog'));
     }

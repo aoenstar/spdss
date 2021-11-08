@@ -12,6 +12,7 @@ class Catalog extends Model
                             'company',
                             'name',
                             'description',
-                            'price'
+                            'price',
+                            'residential'
     ];
 }
