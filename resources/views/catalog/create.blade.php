@@ -1,4 +1,16 @@
-
+<?php 
+    $catalogList = $catalog->pluck('type')->toArray();
+    $options = $catalogList;
+    $options = [
+        '0' => '-- Select One --',
+        'Battery' => 'Battery',
+        'System' => 'System',
+        'Inverter' => 'Inverter',
+        'Solar Panel' => 'Solar Panel'
+    
+    ];
+    $selected = 0;
+?>
 
 <head>
     <title>Create</title>
