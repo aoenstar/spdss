@@ -30,6 +30,8 @@
             <a href="{{ url('/catalog')}}">Catalog</a>
             <a href="{{ url('/Guide')}}">Guide</a>
             <a href="{{ url('/contacts')}}">Contacts</a>
+            <a href="{{ url('/testimonials')}}">Testimonials</a>
+            <a href="{{ url('/feedback')}}">Feedback</a>
             <a href="{{ url('/aboutus')}}">About us</a>
             <a href="{{ url('/FAQ')}}">FAQ</a>
         </div>
