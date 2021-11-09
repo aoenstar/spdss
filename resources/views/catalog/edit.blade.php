@@ -1,6 +1,5 @@
 <?php 
-    $catalogList = $catalog->pluck('type')->toArray();
-    $options = $catalogList;
+    $catalogList = $catalog->pluck('type', 'id')->toArray();
     $options = [
         '0' => '-- Select One --',
         'Battery' => 'Battery',
@@ -8,7 +7,7 @@
         'Inverter' => 'Inverter',
         'Solar Panel' => 'Solar Panel'
     ];
-
+    
     if ($catalogList[$catalog->id] == $options['Battery'] ||
         $catalogList[$catalog->id] == $options['System'] || 
         $catalogList[$catalog->id] == $options['Inverter'] ||

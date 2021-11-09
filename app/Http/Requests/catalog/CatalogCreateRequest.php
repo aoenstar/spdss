@@ -26,9 +26,9 @@ class CatalogCreateRequest extends FormRequest
         return [
                 'company' => 'required| regex:~^[a-zA-Z0-9 ]+$~',
 				'name' => 'required| regex:~^[a-zA-Z0-9 ]+$~',
-				'description' => 'required|regex:~^[A-Za-z0-9 -():.,]+$~',
+				'description' => 'required|regex:~^[a-zA-Z0-9 ()-:.,/]+$~',
 				'price' => 'required|numeric',
-                'sale_type' => 'required|regex:~^[a-zA-Z ]+$~',
+                'sale_type' => 'required|in:Residential, Commercial',
                 'type' => 'required|not_in:0',
         ];
     }
