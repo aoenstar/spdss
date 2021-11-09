@@ -119,10 +119,10 @@
                         <a href ="{{url('catalog/filter/type/Solar-Panel')}}">Solar Panel</a>
                     </div>
 
-                    <a class="category box" style="cursor: pointer">Category</a>
-                    <div class="cat2 hide boxb">
-                        <a href ="{{url('catalog/filter/category/Residential')}}">Residential</a>
-                        <a href ="{{url('catalog/filter/category/Commercial')}}">Commercial</a>
+                    <a class="sale_type box" style="cursor: pointer">Sale Type</a>
+                    <div class="stype hide boxb">
+                        <a href ="{{url('catalog/filter/sale_type/Residential')}}">Residential</a>
+                        <a href ="{{url('catalog/filter/sale_type/Commercial')}}">Commercial</a>
                     </div>
 
                     <a class="company box" style="cursor: pointer">Company</a>
@@ -196,9 +196,9 @@
         dropdown.addEventListener('click', e =>{
             typesList.classList.toggle("hide")
         })
-        let category = document.querySelector(".category")
-        let catList = document.querySelector(".cat2")
-        category.addEventListener('click', e =>{
+        let sale_type = document.querySelector(".sale_type")
+        let catList = document.querySelector(".stype")
+        sale_type.addEventListener('click', e =>{
             catList.classList.toggle("hide")
         })
         let company = document.querySelector(".company")

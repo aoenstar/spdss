@@ -15,11 +15,12 @@
                 <div class="col-md-8">
                     <div class="usrForms">
                         <h2 class = "usrForms-header text-center">Catalog Item: {{$item->name}}</h2>
-                        <div class="usrForms-body justify-content-center">
-                            <p>Price: ${{$item->price}} </p> 
-                            <p>Item: Description: {{$item->description}}</p>
-                            <p>Item Type: {{$item->type}}</p>
-                            <p>Item sold by: {{$item->company}}</p>
+                        <div class="usrForms-body justify-content-center" style="text-align: center">
+                            <p style="font-size: 20px"><strong>Price:</strong> ${{$item->price}} </p> 
+                            <p style="font-size: 20px"><strong>Description:</strong> {{$item->description}}</p>
+                            <p style="font-size: 20px"><strong>Type:</strong> {{$item->type}}</p>
+                            <p style="font-size: 20px"><strong>Sold By:</strong> {{$item->company}}</p>
+                            <p style="font-size: 20px"><strong>Sale Type:</strong> {{$item->sale_type}}</p>
                             
 
                             {!! Form::open(['method' => 'DELETE', 'url' => '/catalog/' .
