@@ -38,6 +38,9 @@ Route::get('/contacts', function () {
     return view('contacts');
 })->name('contacts');
 
+Route::get('/insurance', function () {
+    return view('insurance');
+})->name('insurance');
 
 
 
