@@ -76,37 +76,47 @@
 
 
     <body>
-        <h1>Calculator</h1>
+        <div class="usrForms">
+            <div class="usrForms-header">Calculator</div>
+                <div class="usrForms-body">
+                    <form method="POST" action="/calculator">
+                        <p class="usrForms-subheader">Enter energy bills(kWh) for previous 3 months:</p>
 
-        <form method="POST" action="/calculator">
-            <br />
-            <div class=row>
-                <img src="">
-             <div class=row>
-            First number:
-            <input type="number" name="a" value="{{ $a ?? 0 }}" />
-            <br />
+                        <div class="form-group row">
+                            <div class="col-md-6">
+                                <input type="number" name="a" value="{{ $a ?? 0 }}" />
+                                <label for="number" class="col-md-4 col-form-label text-md-right">First number:</label>
+                            </div>
+                        </div>
 
-            Second number:
-            <input type="number" name="b" value="{{ $b ?? 0 }}" />
-            <br />
+                        <div class="form-group row">
+                            <div class="col-md-6">
+                                <input type="number" name="b" value="{{ $b ?? 0 }}" />
+                                <label for="number" class="col-md-4 col-form-label text-md-right">Second number:</label>
+                            </div>
+                        </div>
 
-            Third number:
-            <input type="number" name="c" value="{{ $c ?? 0 }}" />
-            <br />
-             <p> Enter energy bills(kWh) for previous 3 months</p>
-            <button type="submit">Calculate the result</button>
-            
-        </form>
-         
-         <p> Hi User <p>
-            <br> <p> Thank you for submitting your information. <br> Our recommendation for solar system is as follows:</p>
+                        <div class="form-group row">
+                            <div class="col-md-6">
+                                <input type="number" name="c" value="{{ $c ?? 0 }}" />
+                                <label for="number" class="col-md-4 col-form-label text-md-right">Third number:</label>
+                            </div>
+                        </div>
+                        <br />
+                        <button type="submit">Calculate the result</button>
+                    </form>
+                    
+                    @if (isset($result))
+                        <p class="usrForms-subheader"> Hi User <p>
+                        <p class="usrForms-subheader"> Thank you for submitting your information. <br> Our recommendation for solar system is as follows:</p>
 
-        @if (isset($result))
-            <p>Your Average Energy Usage:{{ $result }}</p>
-            <br>
-            <p>Recommended System Size:{{ $result2 }}</p>
-        @endif
+                        <p class="usrForms-subheader">Your Average Energy Usage:{{ $result }}</p>
+                        <br>
+                        <p class="usrForms-subheader">Recommended System Size:{{ $result2 }}</p>
+                    @endif
+                </div>
+            </div>
+        </div>
     </body>
 </html>
 
