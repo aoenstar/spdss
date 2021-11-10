@@ -48,7 +48,8 @@
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
             <h2>Dashboard</h2>
             <a href="{{ url('/catalog')}}">Catalog</a>
-            <a href="{{ url('/insurance')}}">Insurance</a>
+            <a href="{{ url('/calculator')}}">Calculator</a>
+            <a href="{{ url('/insurance')}}">Insurance Calculator</a>
             <a href="{{ url('/Guide')}}">Guide</a>
             <a href="{{ url('/contacts')}}">Contacts</a>
             <a href="{{ url('/aboutus')}}">About us</a>
