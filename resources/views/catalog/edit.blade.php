@@ -38,6 +38,12 @@
                             {!! Form::submit('Update', ['class' => 'btn btn-primary']) !!}
                         </p>
                     {!! Form::close() !!}
+                    {!! Form::open(['method' => 'DELETE', 'url' => '/catalog/' .
+                        $catalog->id]) !!}
+                        <p class="text-center">
+                            {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
+                        </p>
+                    {!! Form::close() !!}
                 </div>
             </div>
         </div>

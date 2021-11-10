@@ -103,7 +103,7 @@
 
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 sm:items-center sm:pt-0" style="--bg-opacity: 0;">
             <div style="background-color: white; padding-left: 20px; padding-right: 20px; padding-bottom: 10px;">
-                <h1 style="text-align: center;">Catalog</h1>
+                <h1 style="text-align: center;">Solar Panel System<br>Catalog</h1>
                 @if (Auth::user()->role == 'SPDSSAdministrator')
                     <a class="btn" style="padding: 5px 10px;" href="{{ route('catalog.create') }}" style="position:absolute; right:30%;">Add Item</a>
                 @endif
@@ -125,7 +125,7 @@
                         <a href ="{{url('catalog/filter/sale_type/Commercial')}}">Commercial</a>
                     </div>
 
-                    <a class="company box" style="cursor: pointer">Company</a>
+                    <a class="company box" style="cursor: pointer">Solar Panel System Company</a>
                     <div class="com2 hide boxb">
                         <a href ="{{url('catalog/filter/company/Williams Solar')}}">Williams Solar</a>
                         <a href ="{{url('catalog/filter/company/Solar Energy Innovations Inc')}}">Solar Energy Innovations Inc</a>
@@ -139,8 +139,8 @@
                 <table id="catalogTable">
                     <thead>
                         <tr>
-                            <th>Company</th>
-                            <th>Name</th>
+                            <th>Solar Panel System Company</th>
+                            <th>Solar Panel System Name</th>
                             <th>Description</th>
                             <th>Price</th>
                             @if (Auth::user()->role == 'SPDSSAdministrator')

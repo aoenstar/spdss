@@ -21,14 +21,6 @@
                             <p style="font-size: 20px"><strong>Type:</strong> {{$item->type}}</p>
                             <p style="font-size: 20px"><strong>Sold By:</strong> {{$item->company}}</p>
                             <p style="font-size: 20px"><strong>Sale Type:</strong> {{$item->sale_type}}</p>
-                            
-
-                            {!! Form::open(['method' => 'DELETE', 'url' => '/catalog/' .
-                                $item->id]) !!}
-                                <p class="text-center">
-                                    {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
-                                </p>
-                            {!! Form::close() !!}
                         </div>
                     </div>
                 </div>
