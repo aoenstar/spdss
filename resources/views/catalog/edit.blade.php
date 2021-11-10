@@ -1,6 +1,5 @@
 <?php 
-    $catalogList = $catalog->pluck('type')->toArray();
-    $options = $catalogList;
+    $catalogList = $catalog->pluck('type', 'id')->toArray();
     $options = [
         '0' => '-- Select One --',
         'Battery' => 'Battery',
@@ -8,7 +7,7 @@
         'Inverter' => 'Inverter',
         'Solar Panel' => 'Solar Panel'
     ];
-
+    
     if ($catalogList[$catalog->id] == $options['Battery'] ||
         $catalogList[$catalog->id] == $options['System'] || 
         $catalogList[$catalog->id] == $options['Inverter'] ||
@@ -37,6 +36,12 @@
 
                         <p class="text-center">
                             {!! Form::submit('Update', ['class' => 'btn btn-primary']) !!}
+                        </p>
+                    {!! Form::close() !!}
+                    {!! Form::open(['method' => 'DELETE', 'url' => '/catalog/' .
+                        $catalog->id]) !!}
+                        <p class="text-center">
+                            {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
                         </p>
                     {!! Form::close() !!}
                 </div>

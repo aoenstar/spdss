@@ -46,17 +46,27 @@ Route::get('/testimonials', function () {
 Route::get('/feedback', function () {
 return view('feedbacks');
 })->name('feedback');
+Route::get('/insurance', function () {
+    return view('insurance');
+})->name('insurance');
+
+Route::get('/calculator', function () {
+    return view('calculator');
+})->name('calculator');
+
+Route::get('/filter/{company}', [App\Http\Controllers\CatalogController::class, 'filter']);
 
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::post('/calculate', 'Calculator@calculatefunc');
 
 
 Route::resource('catalog', CatalogController::class);
 Route::resource('feedback', FeedbackController::class);
 
-Route::get('catalog/filter/category/{type}', function ($type) {
+Route::get('catalog/filter/sale_type/{type}', function ($type) {
     $items = Catalog::all()->where('sale_type',$type);
       return view('catalog/index')->with('items', $items);
 });
