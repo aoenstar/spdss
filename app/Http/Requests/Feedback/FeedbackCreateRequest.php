@@ -24,7 +24,7 @@ class FeedbackCreateRequest extends FormRequest
     public function rules()
     {
         return [
-            'testimonial' => 'required|regex:~^[a-zA-Z0-9()-:., ]+$~',
+            'testimonial' => 'required|regex:~^[a-zA-Z0-9()-:.,!&\/ ]+$~',
         ];
     }
 }

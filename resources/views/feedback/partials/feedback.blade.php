@@ -15,7 +15,7 @@
             {!! Form::label('testimonial', 'Testimonial:') !!}
             </div>
             
-            @error('name')
+            @error('testimonial')
                 <div style="color: red">{{ $message }}</div>
             @enderror
         </div>
