@@ -137,5 +137,19 @@
               
      
   </div>
+
+  <div class="card">
+      <h1>Registered Customer Feedback Report</h1>
+        <p>Please take a few minutes to give us feedback about our service by providing us with a testimonial of your experience. The infornation you provide would help us determaine if we where successful in the creation of a solar panel suggestion system. We thank you for your participation.</p>
+            
+            
+            <br>
+            <h3>Leave your testimonial here by clicking the "add item" button below</h3>
+            
+            <center><a class="btn" style="padding: 5px 10px;" href="{{ route('feedback.create') }} ">Add Item</a></center>
+     
+              
+     
+  </div>
 </section>
 @endsection
