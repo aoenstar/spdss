@@ -20,7 +20,7 @@ class Calculator extends Model
      *
      * @param  int $a
      * @param  int $b
-     * @param  int $b
+     * @param  int $c
      * @return int
      */
     public function CW(int $a, int $b, int $c): int
