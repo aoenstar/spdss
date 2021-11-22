@@ -43,7 +43,7 @@ class FeedbackController extends Controller
             Feedback::create([
               'testimonial' => $request->testimonial,
       ]);
-    return redirect(url('feedback'));
+    return redirect(url('testimonials'));
     }
 
     /**

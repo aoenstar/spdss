@@ -121,7 +121,7 @@
   <div class="card">
       <h2>Which testimonials are shown?</h2>
       <div class = "card-image image1"></div>
-      <p>All registered customer testimonials which are submitted are shown for full transparency.</p>          
+      <p>All registered customer testimonials which are submitted are shown for transparency, with moderation under the SPDSS community guidelines.</p>          
   </div>
 
   <div class="card">
@@ -140,11 +140,11 @@
 
   <div class="card">
       <h1>Registered Customer Feedback Report</h1>
-        <p>Please take a few minutes to give us feedback about our service by providing us with a testimonial of your experience. The infornation you provide would help us determaine if we where successful in the creation of a solar panel suggestion system. We thank you for your participation.</p>
+        <p>If you enconter any issues which require action from an admin, then leave a report which will be reviewed by an admin as soon as possible. The infornation you provide would only be visible to our system admins. We thank you for your participation.</p>
             
             
             <br>
-            <h3>Leave your testimonial here by clicking the "add item" button below</h3>
+            <h3>Leave your reports here by clicking the "add item" button below</h3>
             
             <center><a class="btn" style="padding: 5px 10px;" href="{{ route('feedback.create') }} ">Add Item</a></center>
      
