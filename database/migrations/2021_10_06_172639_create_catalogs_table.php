@@ -32,6 +32,6 @@ class CreateCatalogsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('=catalogs');
+        Schema::dropIfExists('catalogs');
     }
 }

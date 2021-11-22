@@ -16,7 +16,7 @@ class CatalogSeeder extends Seeder
     public function run()
     {
         DB::table('catalogs')->insert([
-            
+
                 [
                     'company' => 'Solar Energy Innovations Inc',
                     'name'=> 'Magnum Energy inverter',
@@ -90,15 +90,16 @@ class CatalogSeeder extends Seeder
                     'type' => 'Battery',
                 ],
             ]);
-        
-        // Add a default administrator 
-        DB::table('users')->insert([ 
-            [ 
-               'name' => 'admin', 
-               'email' => 'admin@test.com', 
-               'password' => Hash::make('12345678'), 
-               'role' => 'SPDSSAdministrator' 
-            ] 
+
+        // Add a default administrator
+        DB::table('users')->insert([
+            [
+               'name' => 'admin',
+               'email' => 'admin@test.com',
+               'password' => Hash::make('12345678'),
+               'role' => 'SPDSSAdministrator' ,
+               'type' => 'Commercial',
+            ]
         ]);
     }
 }
