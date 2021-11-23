@@ -9,6 +9,7 @@ class Feedback extends Model
 {
     use HasFactory;
     protected $fillable = [
+                            'type',
                             'testimonial'
     ];
 }

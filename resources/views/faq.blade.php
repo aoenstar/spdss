@@ -66,6 +66,7 @@
                 padding-top: 30px;
                 text-align: center;
                 color: white;
+                border: 2.5px solid black;
                 border-radius: 5px 5px 5px 5px; /*radius for left top & bottom corners*/
             }
         </style>

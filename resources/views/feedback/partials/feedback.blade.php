@@ -10,6 +10,8 @@
         <div class="form-group row m-2">
 
             <div class="col-md-6">
+            
+
                 {!! Form::text('testimonial', $feedback->testimonial, ['placeholder' =>
                     'Please enter Your testimonial here...'], ['class' => 'form-control']) !!}
             {!! Form::label('testimonial', 'Testimonial:') !!}

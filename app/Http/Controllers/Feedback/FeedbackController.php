@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Feedback;
 use App\Http\Requests\Feedback\FeedbackCreateRequest;
+use Illuminate\Support\Facades\Auth;
 
 
 class FeedbackController extends Controller
@@ -17,7 +18,18 @@ class FeedbackController extends Controller
      */
     public function index()
     {
-        $entry = Feedback::all();
+        $user = Auth::user();
+
+        if($user->role == "SPDSSAdministrator")
+        {
+            $entry = feedback::all();
+        }
+        else
+        {
+            $entry = Feedback::all()->where('type', '=', 'testimonial');
+        }
+
+        //$entry = Feedback::all();
         return view('feedback/index')->with('feedback', $entry);
     }
 
@@ -31,6 +43,11 @@ class FeedbackController extends Controller
         $feedback = new Feedback;
         return view('feedback/create')->with('feedback', $feedback);
     }
+    public function create2()
+    {
+        $feedback = new Feedback;
+        return view('feedback/create2')->with('feedback', $feedback);
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -41,9 +58,10 @@ class FeedbackController extends Controller
     public function store(FeedbackCreateRequest $request)
     {
             Feedback::create([
+                'type' =>$request->type,
               'testimonial' => $request->testimonial,
       ]);
-    return redirect(url('feedback'));
+    return redirect(url('testimonials'));
     }
 
     /**

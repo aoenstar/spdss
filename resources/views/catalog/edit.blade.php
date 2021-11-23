@@ -41,7 +41,7 @@
                     {!! Form::open(['method' => 'DELETE', 'url' => '/catalog/' .
                         $catalog->id]) !!}
                         <p class="text-center">
-                            {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
+                            {!! Form::submit('Delete', ['class' => 'btn btn-danger', 'onclick' => 'ConfirmDelete()']) !!}
                         </p>
                     {!! Form::close() !!}
                 </div>

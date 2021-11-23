@@ -82,6 +82,7 @@
 </head>
 
 <body class="antialiased">
+    <div class="overlay"></div>
 
     <div id="app">
 
@@ -194,21 +195,49 @@
                     </p>
                 </div>
                 @auth
-                    <table id="catalogTable">
-                        <thead>
-                            <tr>
-                                <th>Solar Panel System Name</th>
-                                <th>Solar Panel System Company</th>
-                                <th>Description</th>
-                                <th>Price</th>
-                                @if (Auth::user()->role == 'SPDSSAdministrator')
-                                    <th></th>
-                                @endif
+                <table id="catalogTable">
+                    <thead>
+                        <tr>
+                            <th>Solar Panel System Name</th>
+                            <th>Description</th>
+                            <th>Solar Panel System Company</th>
+                            <th>Price</th>
+                            @if (Auth::user()->role == 'SPDSSAdministrator')
                                 <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($items as $item)
+                            @endif
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($items as $item)
+                       
+                        <tr class="entries">
+                            <td>{{$item->name}} ({{$item->type}})</td>
+                            <td>{{$item->description}}</td>
+                            <td>{{$item->company}}</td>
+                            <td>${{$item->price}}</td>
+                            
+                            @if (Auth::user()->role == 'SPDSSAdministrator')
+                                <td>
+                                {!! Form::open(['method' =>'get', 'action' =>
+                                ['App\Http\Controllers\Catalog\CatalogController@edit',
+                                $item->id]]) !!}
+                                {!! Form::submit('Edit', ['class' => 'admin-btn']) !!}
+                                {!! Form::close() !!}
+                                </td>
+                            @endif
+                            <td>
+                                {!! Form::open(['method' =>'get', 'action' =>
+                                ['App\Http\Controllers\Catalog\CatalogController@show',
+                                $item->id]]) !!}
+                                {!! Form::submit('Show', ['class' => 'admin-btn']) !!}
+                                {!! Form::close() !!}
+                            </td>
+                        </tr>
+                        <div class="end"></div>
+                        @endforeach
+                    </tbody>
+                </table>
 
                                 <tr class="entries">
                                     <td>{{ $item->name }}</td>

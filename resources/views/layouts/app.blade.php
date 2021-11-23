@@ -22,6 +22,7 @@
     <link href="{{ asset('css/nav.css')}}" rel="stylesheet" >
 </head>
 <body>
+    <div class="overlay"></div>
 
     <div id="app">
         <div id="mySidebar" class="sidebar">
@@ -88,6 +89,22 @@
         </main>
     </div>
 
+    <script>
+        function ConfirmDelete() {
+            var x = confirm("Are you sure you want to delete?");
+            if (x){
+                return true;
+            }
+            
+            else
+            {
+                event.preventDefault();
+                return false;
+            }
+            
+        }
+    </script>
+    </script>
     <script src="{{ asset('js/sidebar.js')}}"></script>
 </body>
 </html>

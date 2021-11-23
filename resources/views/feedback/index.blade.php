@@ -18,6 +18,16 @@
             border-radius: 15px;
         }
 
+        .cardc
+        {
+            position: absolute;
+            display: none;
+            background: white;
+            width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 15px;
+        }
         .card-image
         {
             
@@ -103,19 +113,31 @@
       cursor: pointer;
         margin: auto;
       }
+
+      .darken {
+        position: fixed;
+    background-color: rgba(0, 0, 0, 0.80);
+    display: none;
+    top:0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+      }
     </style>
 
     <br>
     <br>
     <br>
     <div class="con">
-        <h1>Feedback</h1>
+        <h3>Feedback</h3>
     </div>    
     <section class="container">
 	<div class="relative flex items-top justify-center min-h-screen bg-gray-100 sm:items-center sm:pt-0" style="--bg-opacity: 0;">
             <div style="background-color: white; padding-left: 20px; padding-right: 20px; padding-bottom: 10px;">
+            <div class = "darken">
+            
+            </div>
                 <h1 style="text-align: center;">RC Testimonials</h1>
-               
                 <br>
                 
 
@@ -141,7 +163,7 @@
                                 {!! Form::open(['method' =>'delete', 'action' =>
                                 ['App\Http\Controllers\Feedback\FeedbackController@destroy',
                                 $item->id]]) !!}
-                                {!! Form::submit('Delete', ['class' => 'admin-btn']) !!}
+                                {!! Form::submit('Delete', ['class' => 'admin-btn', 'onclick' => 'ConfirmDelete()']) !!}
                                 {!! Form::close() !!}
                             </td>
                             @endif
@@ -162,5 +184,19 @@
             $('#feedbackTable').DataTable();
         });
 
+
+    function ConfirmDelete() {
+        var x = confirm("Are you sure you want to delete?");
+        if (x){
+            return true;
+        }
+        
+        else
+        {
+            event.preventDefault();
+            return false;
+        }
+        
+    }
     </script>
 

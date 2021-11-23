@@ -1,4 +1,4 @@
-<head>
+    <head>
         <title>Create</title>
        
     </head>
@@ -10,12 +10,12 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="usrForms">
-                <h2 class = "usrForms-header text-center">Post a Testimonial to SPDSS</h2>
+                <h2 class = "usrForms-header text-center">Post a Report to SPDSS</h2>
                 <div class="usrForms-body d-flex justify-content-center">
                     {!! Form::open((['method' => 'post', 'route' => 'feedback.store'])) !!}
                         @include('feedback.partials/feedback', $feedback)
 
-                        {!! Form::hidden('type', "testimonial") !!}
+                        {!! Form::hidden('type', "report") !!}
                         <p class="text-center">
                             {!! Form::submit('Post', ['class' => 'btn btn-primary']) !!}
                         </p>

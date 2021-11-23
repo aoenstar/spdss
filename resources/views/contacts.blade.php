@@ -87,19 +87,19 @@
             <h2>Innogen Solar Electricity</h2>
 
             <p>Phone: +1 246 228-2107 <br><br> Email: sales@innogenonline.com  <br><br> Address: Harold Hoyte and Fred Gollop Media Centre,Fontabelle, St. Michael,Bridgetown, Barbados</p>
-            <a href="">Contact Now</a>
+            <a href="https://www.innogenonline.com/">Contact Now</a>
         </div>
         <div class="card">
             <div class = "card-image"><img src="https://seisolarinc.com/wp-content/uploads/2020/10/seisolarinclogo.jpg"></div>
             <h2>Solar Energy Innovations Inc</h2>
             <p>Phone: +1 246-271-1330 <br><br> Email: office@simmons.bb  <br><br> Address: Lot C 16 Emerald Park, St Philip, Barbados</p>
-            <a href="">Contact Now</a>
+            <a href="https://seisolarinc.com/">Contact Now</a>
         </div>
         <div class="card">
             <div class = "card-image"><img src="https://solarwattsystems.com/wp-content/themes/solarwatt_systemsinc/assets/img/sw_logo%20copy.png"></div>
             <h2>Solar Watt <br> Systems Inc</h2>
             <p>Phone: +1 246-622-1450 <br><br> Email: info@solarwattsystems.com  <br><br> Address: Barracks Hill No.1, Oistins BB15071, Barbados</p>
-            <a href="">Contact Now</a>
+            <a href="https://solarwattsystems.com/">Contact Now</a>
         </div>
     </section>
 @endsection
