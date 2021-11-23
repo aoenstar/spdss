@@ -41,6 +41,7 @@
 </head>
 
 <body class="antialiased">
+    <div class="overlay"></div>
 
     <div id="app">
         

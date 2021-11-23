@@ -22,6 +22,7 @@
     <link href="{{ asset('css/nav.css')}}" rel="stylesheet" >
 </head>
 <body>
+    <div class="overlay"></div>
 
     <div id="app">
         <div id="mySidebar" class="sidebar">
