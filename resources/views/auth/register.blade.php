@@ -61,6 +61,14 @@
                                 </div>
                             </div>
 
+                            <div class="form-group row">
+
+                                <div class="col-md-6" style="border: none">
+                                    <input id="Residential" type="checkbox" class="form-control @error('Residential') is-invalid @enderror" name="Residential">
+                                    <label for="Residential" class="col-md-4 col-form-label text-md-right">{{ __('Residential') }}</label>
+                                </div>
+                            </div>
+
                             <div class="form-group row mb-0">
                                 <div class="offset-md-4">
                                     <button type="submit" class="btn btn-primary">

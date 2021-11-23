@@ -5,17 +5,18 @@ namespace App\Http\Controllers\Catalog;
 use App\Http\Controllers\Controller;
 use App\Models\Catalog;
 use App\Http\Requests\catalog\CatalogCreateRequest;
+use Illuminate\Support\Facades\Auth;
 
 class CatalogController extends Controller
 {
-  
+
     public function __construct()
-    { 
+    {
       $this->middleware('catalog.access:SPDSSAdministrator,RegisteredCustomer')->only(['index', 'show']);
 
       $this->middleware('catalog.access:SPDSSAdministrator,null')->only(['create', 'store', 'edit', 'update', 'delete']);
-  
-    } 
+
+    }
 
     /**
      * Display a listing of the resource.
@@ -24,8 +25,22 @@ class CatalogController extends Controller
      */
     public function index()
     {
-      $items = catalog::all();
-      return view('catalog/index')->with('items', $items);
+        $user = Auth::user();
+
+        if($user->role == "SPDSSAdministrator")
+        {
+        $items = catalog::all()->sortByDesc('name');
+        } else
+        {
+            if($user->type == "Commercial")
+            {
+                $items = catalog::all()->where('sale_type', '=', 'Commercial')->sortByDesc('name');
+            } else
+            {
+                $items = catalog::all()->where('sale_type', '=', 'Residential')->sortByDesc('name');
+            }
+        }
+        return view('catalog/index')->with('items', $items);
     }
 
     /**
