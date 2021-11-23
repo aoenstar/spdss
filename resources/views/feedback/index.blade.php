@@ -129,7 +129,7 @@
     <br>
     <br>
     <div class="con">
-        <h1>Feedback</h1>
+        <h3>Feedback</h3>
     </div>    
     <section class="container">
 	<div class="relative flex items-top justify-center min-h-screen bg-gray-100 sm:items-center sm:pt-0" style="--bg-opacity: 0;">

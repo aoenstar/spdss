@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Catalog\CatalogController;
 use App\Models\Catalog;
+use App\Models\Feedback;
 use App\Http\Controllers\Feedback\FeedbackController;
 
 /*
@@ -56,6 +57,10 @@ Route::get('/calculator', function () {
 
 Route::get('/filter/{company}', [App\Http\Controllers\CatalogController::class, 'filter']);
 
+Route::get('/create2', function () {
+    $feedback = new Feedback;
+    return view('feedback/create2')->with('feedback', $feedback);
+})->name('feedback.create2');
 
 Auth::routes();
 

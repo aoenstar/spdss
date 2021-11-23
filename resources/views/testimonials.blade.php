@@ -146,7 +146,7 @@
             <br>
             <h3>Leave your reports here by clicking the "add item" button below</h3>
             
-            <center><a class="btn" style="padding: 5px 10px;" href="{{ route('feedback.create') }} ">Add Item</a></center>
+            <center><a class="btn" style="padding: 5px 10px;" href="{{ route('feedback.create2') }} ">Add Item</a></center>
      
               
      
