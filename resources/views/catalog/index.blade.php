@@ -142,9 +142,9 @@
                 <table id="catalogTable">
                     <thead>
                         <tr>
-                            <th>Solar Panel System Company</th>
                             <th>Solar Panel System Name</th>
                             <th>Description</th>
+                            <th>Solar Panel System Company</th>
                             <th>Price</th>
                             @if (Auth::user()->role == 'SPDSSAdministrator')
                                 <th></th>
@@ -156,9 +156,9 @@
                         @foreach ($items as $item)
                        
                         <tr class="entries">
-                            <td>{{$item->company}}</td>
-                            <td>{{$item->name}}</td>
+                            <td>{{$item->name}} ({{$item->type}})</td>
                             <td>{{$item->description}}</td>
+                            <td>{{$item->company}}</td>
                             <td>${{$item->price}}</td>
                             
                             @if (Auth::user()->role == 'SPDSSAdministrator')
