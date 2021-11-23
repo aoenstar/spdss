@@ -28,6 +28,9 @@
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
 
     <script>
+        var minUp = document.getElementById("minValue").addEventListener("keyup",updateTableByPrice);
+        var maxUp = document.getElementById("maxValue").addEventListener("keyup",updateTableByPrice);
+    
         $(document).ready(function() {
             $('#catalogTable').DataTable();
             document.getElementById("minValue").addEventListener('keyup', updateTableByPrice);
