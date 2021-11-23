@@ -28,8 +28,6 @@
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
 
     <script>
-        var minUp = document.getElementById("minValue").addEventListener("keyup",updateTableByPrice);
-        var maxUp = document.getElementById("maxValue").addEventListener("keyup",updateTableByPrice);
     
         $(document).ready(function() {
             $('#catalogTable').DataTable();
@@ -241,30 +239,6 @@
                         @endforeach
                     </tbody>
                 </table>
-
-                                <tr class="entries">
-                                    <td>{{ $item->name }}</td>
-                                    <td>{{ $item->company }}</td>
-                                    <td>{{ $item->description }}</td>
-                                    <td>${{ $item->price }}</td>
-
-                                    @if (Auth::user()->role == 'SPDSSAdministrator')
-                                        <td>
-                                            {!! Form::open(['method' => 'get', 'action' => ['App\Http\Controllers\Catalog\CatalogController@edit', $item->id]]) !!}
-                                            {!! Form::submit('Edit', ['class' => 'admin-btn']) !!}
-                                            {!! Form::close() !!}
-                                        </td>
-                                    @endif
-                                    <td>
-                                        {!! Form::open(['method' => 'get', 'action' => ['App\Http\Controllers\Catalog\CatalogController@show', $item->id]]) !!}
-                                        {!! Form::submit('Show', ['class' => 'admin-btn']) !!}
-                                        {!! Form::close() !!}
-                                    </td>
-                                </tr>
-                                <div class="end"></div>
-                            @endforeach
-                        </tbody>
-                    </table>
 
                     @endif
 
