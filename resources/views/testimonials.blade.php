@@ -108,7 +108,7 @@
 <br>
 <br>
 <div class="con">
-  <h1>Testimonials</h1>
+  <h2>Testimonials and Reports</h2>
 </div>    
 <section class="container">
 <!-- hello--> 
@@ -146,7 +146,7 @@
             <br>
             <h3>Leave your reports here by clicking the "add item" button below</h3>
             
-            <center><a class="btn" style="padding: 5px 10px;" href="{{ route('feedback.create2') }} ">Add Item</a></center>
+            <center><a class="btn" style="padding: 5px 10px;" href="{{ route('feedback.create2') }} ">Add Report</a></center>
      
               
      
