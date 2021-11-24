@@ -30,7 +30,6 @@
             <h2>Dashboard</h2>
             <a href="{{ url('/catalog')}}">Catalog</a>
             <a href="{{ url('/insurance')}}">Insurance Calculator</a>
-            <a href="{{ url('/Guide')}}">Guide</a>
             <a href="{{ url('/contacts')}}">Contacts</a>
             <a href="{{ url('/testimonials')}}">Testimonials</a>
             <a href="{{ url('/feedback')}}">Feedback</a>
