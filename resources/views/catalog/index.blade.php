@@ -167,12 +167,6 @@
                         <a href="{{ url('catalog/filter/type/Solar-Panel') }}">Solar Panel</a>
                     </div>
 
-                    <a class="sale_type box" style="cursor: pointer">Sale Type</a>
-                    <div class="stype hide boxb">
-                        <a href="{{ url('catalog/filter/sale_type/Residential') }}">Residential</a>
-                        <a href="{{ url('catalog/filter/sale_type/Commercial') }}">Commercial</a>
-                    </div>
-
                     <a class="company box" style="cursor: pointer">Solar Panel System Company</a>
                     <div class="com2 hide boxb">
                         <a href="{{ url('catalog/filter/company/Williams Solar') }}">Williams Solar</a>
